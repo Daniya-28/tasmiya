@@ -12,7 +12,11 @@ function App() {
     const sum = Number(num1) + Number(num2); 
     setResult(sum);
   };
-
+const handleSubmitmin = (e) => {
+    e.preventDefault(); 
+    const sum = Number(num1) -Number(num2); 
+    setResult(sum);
+  };
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -24,6 +28,18 @@ function App() {
         />
         <input type="number" placeholder="Enter second number"  value={num2}onChange={(e) => setNum2(e.target.value)}/>
         <button type="submit">Add</button>
+
+        <br/>
+        <br/>
+          <form onSubmit={handleSubmit}></form>
+        <input
+          type="number"
+          placeholder="Enter first number"
+          value={num1}
+          onChange={(e) => setNum1(e.target.value)}
+        />
+        <input type="number" placeholder="Enter second number"  value={num2}onChange={(e) => setNum2(e.target.value)}/>
+        <button type="submit2">subtract</button>
       </form>
 
       <h2>Result: {result}</h2>
